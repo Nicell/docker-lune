@@ -3,11 +3,11 @@
 Docker files for [Lune](https://github.com/lune-org/lune).
 
 Available images:
-- Debian
+- Debian: [`nicell/lune:debian`](https://hub.docker.com/r/nicell/lune)
   - Default. Uses the `debian:stable-slim` base image.
-- Distroless
+- Distroless: [`nicell/lune:distroless`](https://hub.docker.com/r/nicell/lune)
   - Barebones image. Uses the `gcr.io/distroless/cc` base image. No shell, package manager, or other tools are included.
-- Binary only
+- Binary only: [`nicell/lune:bin`](https://hub.docker.com/r/nicell/lune)
   - Contains only the Lune binary. Used for adding Lune to other images.
 
 ## Run Lune
