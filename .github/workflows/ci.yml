@@ -108,9 +108,6 @@ jobs:
         if: ${{ matrix.kind != 'distroless' }}
         run: |
           docker run -t localhost:5000/${{ matrix.kind }} echo 'entry works'
-      
-      - name: wtf?
-        run: echo '${{ github.ref }} ${{ github.ref_name }}'
 
       - name: Login to Docker Hub
         if: github.repository == env.GIT_REPOSITORY && github.ref_type == 'tag'
@@ -128,7 +125,7 @@ jobs:
           docker pull --platform linux/arm64 ${{ env.DOCKER_REPOSITORY }}:${{ matrix.kind }}-${{ github.ref_name }} 
           docker pull --platform linux/arm64 ${{ env.DOCKER_REPOSITORY }}:${{ matrix.kind }}
 
-      - name: Push bin image
+      - name: Push bin images
         if: github.repository == env.GIT_REPOSITORY && github.ref_type == 'tag' && matrix.kind == 'debian'
         run: |
           docker buildx imagetools create localhost:5000/bin -t ${{ env.DOCKER_REPOSITORY }}:bin-${{ github.ref_name }} -t ${{ env.DOCKER_REPOSITORY }}:bin
