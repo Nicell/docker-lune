@@ -1,4 +1,4 @@
-ARG LUNE_VERSION=0.8.9
+ARG LUNE_VERSION=0.9.0
 
 FROM buildpack-deps:curl AS download
 
