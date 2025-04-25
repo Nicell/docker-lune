@@ -3,7 +3,7 @@ ARG BIN_IMAGE=nicell/lune:bin-${LUNE_VERSION}
 
 FROM ${BIN_IMAGE} AS bin
 
-FROM gcr.io/distroless/cc
+FROM gcr.io/distroless/cc-debian13
 
 ARG LUNE_VERSION
 ENV LUNE_VERSION=${LUNE_VERSION}
