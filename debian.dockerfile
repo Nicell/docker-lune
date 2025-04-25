@@ -1,9 +1,9 @@
-ARG LUNE_VERSION=0.8.9
+ARG LUNE_VERSION=0.9.0
 ARG BIN_IMAGE=nicell/lune:bin-${LUNE_VERSION}
 
 FROM ${BIN_IMAGE} AS bin
 
-FROM debian:stable-slim
+FROM debian:trixie-slim
 
 ARG LUNE_VERSION
 ENV LUNE_VERSION=${LUNE_VERSION}
